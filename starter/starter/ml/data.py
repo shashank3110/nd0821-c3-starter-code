@@ -1,6 +1,36 @@
 import numpy as np
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
+def get_data_slices(data=None,slicing_feature=None):
+    """
+    Perform data slicing on categorical features inorder
+    to train and evaluate the model on a slice of data.
+
+    Inputs
+    ------
+    X : pd.DataFrame
+        Dataframe containing the features and label. Columns in `categorical_features`
+    slicing_feature: str
+        name of the feature to slice the dataset along
+
+    Returns
+    -------
+    slices : dict[slice_name,pd.DataFrame]
+             dict containing data subsets/slices as dataframes
+    slice_names : np.ndarray[str]
+                  array containing names of categories of the slicing feature
+                  i.e. keys of slices dict.
+    """
+
+    slices = {}
+
+    slice_names = data[slicing_feature].unique()
+
+    for val in slice_names:
+        slices[val] = data[data[slicing_feature]==val]
+        #slices.append(data[data[slicing_feature]==val])
+    
+    return slices, slice_names
 
 def process_data(
     X, categorical_features=[], label=None, training=True, encoder=None, lb=None
@@ -64,7 +94,7 @@ def process_data(
             y = lb.transform(y.values).ravel()
         # Catch the case where y is None because we're doing inference.
         except AttributeError:
-            pass
+            print("Inappropriate y values, expected non-empty value for y but got y={y} ")
 
     X = np.concatenate([X_continuous, X_categorical], axis=1)
     return X, y, encoder, lb
