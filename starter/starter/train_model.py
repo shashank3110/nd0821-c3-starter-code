@@ -15,18 +15,18 @@ logging.basicConfig(filename='output.txt',encoding='utf-8',
     format='%(name)s - %(levelname)s - %(message)s')
 
 
-def process_train_test_data(train=None,test=None,
-    cat_features=[],label="salary"):
+# def process_train_test_data(train=None,test=None,
+#     cat_features=[],label="salary"):
 
-    X_train, y_train, encoder, lb = process_data(
-    train, categorical_features=cat_features, label=label, training=True)
+#     X_train, y_train, encoder, lb = process_data(
+#     train, categorical_features=cat_features, label=label, training=True)
     
-    # Proces the test data with the process_data function.
-    X_test, y_test, encoder, lb = process_data(
-    test, categorical_features=cat_features, label=label, training=False,
-    encoder=encoder,lb=lb)
+#     # Proces the test data with the process_data function.
+#     X_test, y_test, encoder, lb = process_data(
+#     test, categorical_features=cat_features, label=label, training=False,
+#     encoder=encoder,lb=lb)
 
-    return X_train,y_train,X_test,y_test
+#     return X_train,y_train,X_test,y_test
 
 def run(data_path='data/census.csv',cat_features=[],label="salary"):
     """
@@ -45,8 +45,19 @@ def run(data_path='data/census.csv',cat_features=[],label="salary"):
     
     # process train/test data
     logging.info("perform data processing")
-    X_train,y_train,X_test,y_test = process_train_test_data(train,test,
-                                        cat_features,label,)
+    # X_train,y_train,X_test,y_test = process_train_test_data(train,test,
+                                        # cat_features,label,)
+
+    X_train, y_train, encoder, lb = process_data(
+    train, categorical_features=cat_features, label=label, training=True)
+    
+    # Proces the test data with the process_data function.
+    X_test, y_test, encoder, lb = process_data(
+    test, categorical_features=cat_features, label=label, training=False,
+    encoder=encoder,lb=lb)
+
+    dump(encoder,'model/encoder.joblib')
+    dump(lb,'model/lb.joblib')
 
     # Train and save a model.
     logging.info("start model training")

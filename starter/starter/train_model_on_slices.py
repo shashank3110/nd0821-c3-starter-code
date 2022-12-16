@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from ml.data import process_data,get_data_slices
 from ml.model import train_model,inference,compute_model_metrics
-from train_model import process_train_test_data
+# from train_model import process_train_test_data
 from joblib import dump,load
 from collections import defaultdict
 import logging
