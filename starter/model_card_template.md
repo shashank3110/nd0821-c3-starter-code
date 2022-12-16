@@ -7,11 +7,11 @@ problem type: binary classification
 model: Gradent boosting classifier
 
 ## Intended Use
-To predict if an adult earns >=50K per year.
+To predict if an adult earns > 50K per year.
 
 ## Dataset
-Census data: https://archive.ics.uci.edu/ml/datasets/census+income
-Dataset shape: (32561, 15)
+Census data: https://archive.ics.uci.edu/ml/datasets/census+income <br>
+Dataset shape: (32561, 15) <br>
 label: "salary"
 
 ## Training Data
@@ -26,7 +26,7 @@ Test split : 20%
 - Fbeta score (beta=1 i.e. F1 score): 0.699
 
 ## Ethical Considerations
-The dataset involves sensitive features such as race, sex, v to name a few.
+The dataset involves sensitive features such as race, sex, native-country to name a few.
 The model could infer certain kinds of people more favorably. One needs
 to be cognizant of this.
 
