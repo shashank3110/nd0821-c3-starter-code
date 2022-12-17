@@ -1,0 +1,70 @@
+INFO:root:read data
+INFO:root:perform data processing
+INFO:root:start model training
+INFO:root:model save here:model/model.joblib 
+INFO:root:perform inference on test set with slicing on: education
+INFO:root:Slice:Bachelors
+INFO:root:Test data shape:(1053, 108), Test label shape:(1053,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:Bachelors: precision=0.7572383073496659,recall=0.7555555555555555,fbeta=0.7563959955506118
+INFO:root:Slice:HS-grad
+INFO:root:Test data shape:(2085, 108), Test label shape:(2085,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:HS-grad: precision=0.7038834951456311,recall=0.42028985507246375,fbeta=0.5263157894736842
+INFO:root:Slice:11th
+INFO:root:Test data shape:(225, 108), Test label shape:(225,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:11th: precision=1.0,recall=0.5454545454545454,fbeta=0.7058823529411764
+INFO:root:Slice:Masters
+INFO:root:Test data shape:(369, 108), Test label shape:(369,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:Masters: precision=0.8262910798122066,recall=0.8502415458937198,fbeta=0.8380952380952381
+INFO:root:Slice:9th
+INFO:root:Test data shape:(115, 108), Test label shape:(115,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:9th: precision=1.0,recall=0.6666666666666666,fbeta=0.8
+INFO:root:Slice:Some-college
+INFO:root:Test data shape:(1485, 108), Test label shape:(1485,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:Some-college: precision=0.7130801687763713,recall=0.6101083032490975,fbeta=0.6575875486381323
+INFO:root:Slice:Assoc-acdm
+INFO:root:Test data shape:(198, 108), Test label shape:(198,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:Assoc-acdm: precision=0.7441860465116279,recall=0.6808510638297872,fbeta=0.711111111111111
+INFO:root:Slice:Assoc-voc
+INFO:root:Test data shape:(273, 108), Test label shape:(273,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:Assoc-voc: precision=0.660377358490566,recall=0.5555555555555556,fbeta=0.6034482758620691
+INFO:root:Slice:7th-8th
+INFO:root:Test data shape:(141, 108), Test label shape:(141,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:7th-8th: precision=0.5,recall=0.16666666666666666,fbeta=0.25
+INFO:root:Slice:Doctorate
+INFO:root:Test data shape:(77, 108), Test label shape:(77,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:Doctorate: precision=0.859375,recall=0.9649122807017544,fbeta=0.9090909090909092
+INFO:root:Slice:Prof-school
+INFO:root:Test data shape:(116, 108), Test label shape:(116,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:Prof-school: precision=0.8602150537634409,recall=0.9523809523809523,fbeta=0.903954802259887
+INFO:root:Slice:5th-6th
+INFO:root:Test data shape:(62, 108), Test label shape:(62,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:5th-6th: precision=1.0,recall=0.5,fbeta=0.6666666666666666
+INFO:root:Slice:10th
+INFO:root:Test data shape:(183, 108), Test label shape:(183,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:10th: precision=0.8,recall=0.3333333333333333,fbeta=0.47058823529411764
+INFO:root:Slice:1st-4th
+INFO:root:Test data shape:(23, 108), Test label shape:(23,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:1st-4th: precision=1.0,recall=1.0,fbeta=1.0
+INFO:root:Slice:Preschool
+INFO:root:Test data shape:(10, 108), Test label shape:(10,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:Preschool: precision=1.0,recall=1.0,fbeta=1.0
+INFO:root:Slice:12th
+INFO:root:Test data shape:(98, 108), Test label shape:(98,)
+INFO:root:get model_metrics on test set on slice: {slicing_feature}
+INFO:root:Slice:12th: precision=0.6666666666666666,recall=0.4,fbeta=0.5
+INFO:root:Performance Summary on data slices={'Bachelors': {'precision': 0.7572383073496659, 'recall': 0.7555555555555555, 'fbeta': 0.7563959955506118}, 'HS-grad': {'precision': 0.7038834951456311, 'recall': 0.42028985507246375, 'fbeta': 0.5263157894736842}, '11th': {'precision': 1.0, 'recall': 0.5454545454545454, 'fbeta': 0.7058823529411764}, 'Masters': {'precision': 0.8262910798122066, 'recall': 0.8502415458937198, 'fbeta': 0.8380952380952381}, '9th': {'precision': 1.0, 'recall': 0.6666666666666666, 'fbeta': 0.8}, 'Some-college': {'precision': 0.7130801687763713, 'recall': 0.6101083032490975, 'fbeta': 0.6575875486381323}, 'Assoc-acdm': {'precision': 0.7441860465116279, 'recall': 0.6808510638297872, 'fbeta': 0.711111111111111}, 'Assoc-voc': {'precision': 0.660377358490566, 'recall': 0.5555555555555556, 'fbeta': 0.6034482758620691}, '7th-8th': {'precision': 0.5, 'recall': 0.16666666666666666, 'fbeta': 0.25}, 'Doctorate': {'precision': 0.859375, 'recall': 0.9649122807017544, 'fbeta': 0.9090909090909092}, 'Prof-school': {'precision': 0.8602150537634409, 'recall': 0.9523809523809523, 'fbeta': 0.903954802259887}, '5th-6th': {'precision': 1.0, 'recall': 0.5, 'fbeta': 0.6666666666666666}, '10th': {'precision': 0.8, 'recall': 0.3333333333333333, 'fbeta': 0.47058823529411764}, '1st-4th': {'precision': 1.0, 'recall': 1.0, 'fbeta': 1.0}, 'Preschool': {'precision': 1.0, 'recall': 1.0, 'fbeta': 1.0}, '12th': {'precision': 0.6666666666666666, 'recall': 0.4, 'fbeta': 0.5}}
