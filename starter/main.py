@@ -14,6 +14,8 @@ import joblib
 import json
 import pandas as pd
 import numpy as np
+import os
+
 
 app = FastAPI()
 
@@ -55,9 +57,15 @@ async def greeting():
 
 @app.post("/predict/")
 async def infer(body: Data):# use of type hints for body i.e. Data
-    model = joblib.load('model/model.joblib')
-    encoder = joblib.load('model/encoder.joblib')
-    lb = joblib.load('model/lb.joblib')
+    
+    if os.path.exists('model/'):
+        base_path = 'model'
+    else:
+        base_path = os.path.join(os.getcwd(),'starter/model') # run main.py from outside starter.s
+    
+    model = joblib.load(f'{base_path}/model.joblib')
+    encoder = joblib.load(f'{base_path}/encoder.joblib')
+    lb = joblib.load(f'{base_path}/lb.joblib')
     body = json.loads(body.json())
     X = np.array(list(body.values()))
     cols = [col.replace('_','-') for col in body.keys()]
