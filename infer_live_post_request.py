@@ -1,3 +1,7 @@
+"""
+Live API Post request for inference.
+"""
+
 import requests
 import json
 
@@ -20,4 +24,5 @@ data = json.dumps(body)
 r = requests.post("https://census-data-app1.herokuapp.com/predict/",data=data)
 result = r.json()
 
-print(result)
+print(f'status code: {r.status_code}')
+print(f'prediction results: {result}')
