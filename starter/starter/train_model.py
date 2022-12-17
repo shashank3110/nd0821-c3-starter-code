@@ -10,23 +10,10 @@ import logging
 import os
 print(os.getcwd())
 
-logging.basicConfig(filename='output.txt',encoding='utf-8',
-    level=logging.INFO,filemode='w',
-    format='%(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='logs/output.txt',encoding='utf-8',
+    level=logging.INFO,filemode='w')
 
 
-# def process_train_test_data(train=None,test=None,
-#     cat_features=[],label="salary"):
-
-#     X_train, y_train, encoder, lb = process_data(
-#     train, categorical_features=cat_features, label=label, training=True)
-    
-#     # Proces the test data with the process_data function.
-#     X_test, y_test, encoder, lb = process_data(
-#     test, categorical_features=cat_features, label=label, training=False,
-#     encoder=encoder,lb=lb)
-
-#     return X_train,y_train,X_test,y_test
 
 def run(data_path='data/census.csv',cat_features=[],label="salary"):
     """
