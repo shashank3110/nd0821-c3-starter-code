@@ -48,6 +48,27 @@ class Data(BaseModel):
     hours_per_week     :  int
     native_country    :  str
 
+    class Config:
+        schema_extra = {
+            "example": {
+                "age": 39,
+                "workclass": "State-gov",	
+                "fnlgt": 77516,
+                "education": "Masters",
+                "education_num": 13,
+                "marital_status": "Never-married",
+                "occupation": "Adm-clerical",
+                "relationship": "Not-in-family",
+                "race": "White",
+                "sex": "Male",
+                "capital_gain": 20740,
+                "capital_loss": 0,
+                "hours_per_week": 42,
+                "native_country": "United-States"
+            }
+        }
+
+
     
 
 @app.get("/")
