@@ -1,0 +1,2 @@
+# redirecting to requirements.txt inside starter
+-r starter/requirements.txt
